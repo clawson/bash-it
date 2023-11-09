@@ -41,7 +41,7 @@ function pman() {
 	param '1: man page to view'
 	example '$ pman bash'
 	group 'osx'
-	man -t "${1}" | open -fa 'Preview'
+	mandoc -T pdf `man -w "${1}"` | open -fa 'Preview'
 }
 
 function pri() {
